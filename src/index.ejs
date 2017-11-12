@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>TV Trend</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/trend.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <button class="btn btn-primary" id="random">100 random records</button>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" value="">
+        隨機作廢
+      </label>
+    </div>
+    <script src="js/trend.js"></script>
+    <script>
+      function rand100() {
+        /* 測試塞的假資料 */
+        const data = []
+
+        for (let i = 1; i <= 100; i++) {
+          const numbers = []
+          for (let j = 0; j < 5; j++) {
+            numbers.push(getRandomInt(0, 9))
+          }
+
+          // 隨機作廢
+          if (document.querySelector('input').checked && getRandomInt(0, 10) > 9) {
+            data.push({ series: 1000000000 + i, numbers: 'X,X,X,X,X' })
+            continue
+          }
+          data.push({ series: 1000000000 + i, numbers: numbers.join(',') })
+        }
+        /* ------------- */
+        trend.draw({
+          element: '.container-fluid',
+          data: data
+        })
+      }
+      
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+
+      rand100()
+      document.querySelector('#random').addEventListener('click', rand100)
+    </script>
+  </body>
+</html>
