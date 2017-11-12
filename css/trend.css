@@ -1,0 +1,77 @@
+button {
+  margin: 10px 0;
+}
+
+table {
+  margin: 10px 0;
+}
+
+table td, table th {
+  padding: .1rem !important;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+ul li {
+  margin: 0 5px;
+  list-style: none;
+  display: inline-block;
+}
+
+.row {
+  margin: 0;
+}
+
+.col {
+  padding: 0;
+  min-width: 20px;
+  z-index: 1001;
+}
+
+.col.checked {
+  border-radius: 12px;
+  color: #fff;
+}
+
+.col.checked:before {
+  content: 'Y';
+}
+
+.col.checked.color-1 {
+  background: #c1a5e5;
+}
+
+.col.checked.color-2 {
+  background: #47d072;
+}
+
+.col.checked.color-3 {
+  background: #ffc076;
+}
+
+td {
+  border-top-style: dashed !important;
+}
+
+td:nth-child(n+3):nth-child(-n+7) .col {
+  font-weight: bold;
+  color: #fff;
+}
+
+td:nth-child(n+3):nth-child(-n+7) .col:empty {
+  width: 0;
+}
+
+.container-fluid {
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+}
