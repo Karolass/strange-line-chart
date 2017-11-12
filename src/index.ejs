@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <button class="btn btn-primary" id="random">100 random records</button>
+      <button class="btn btn-primary" id="random">30 random records</button>
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" value="">
         隨機作廢
@@ -17,11 +17,11 @@
     </div>
     <script src="js/trend.js"></script>
     <script>
-      function rand100() {
+      function rand() {
         /* 測試塞的假資料 */
         const data = []
 
-        for (let i = 1; i <= 100; i++) {
+        for (let i = 1; i <= 30; i++) {
           const numbers = []
           for (let j = 0; j < 5; j++) {
             numbers.push(getRandomInt(0, 9))
@@ -45,8 +45,8 @@
         return Math.floor(Math.random() * (max - min + 1)) + min
       }
 
-      rand100()
-      document.querySelector('#random').addEventListener('click', rand100)
+      rand()
+      document.querySelector('#random').addEventListener('click', rand)
     </script>
   </body>
 </html>

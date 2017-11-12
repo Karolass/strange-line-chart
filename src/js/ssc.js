@@ -148,16 +148,13 @@ export default {
           if (array1[j][0] == undefined) {
             continue
           } else if (j == 0 || array1[j - 1][0] == undefined) {
-            ctx.save()
             // line
             ctx.beginPath()
             ctx.moveTo(array1[j][i][0], array1[j][i][1])
             // circle
             ctx.arc(array1[j][i][0], array1[j][i][1], 12, 0, Math.PI*2, true)
             ctx.fill()
-            ctx.restore()
           } else {
-            ctx.save()
             // line
             ctx.beginPath()
             ctx.moveTo(array1[j - 1][i][0], array1[j - 1][i][1])
@@ -167,7 +164,6 @@ export default {
             // circle
             ctx.arc(array1[j][i][0], array1[j][i][1], 12, 0, Math.PI*2, true)
             ctx.fill()
-            ctx.restore()
           }
         }
       }
